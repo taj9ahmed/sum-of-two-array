@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <h3>Sum of Two Arrays</h3>
+    <div id ="output"></div>
+    
+    
+    <script>
+      // debugger;
+    //take user input  
+      function user_input(){
+        arr1 = [1,0,2,3,4];
+        arr2 = [3,5,6,7,8,13];
+        arr_sum(arr1, arr2);
+        
+      }//end function user_input
+      
+      //perform the sum operation
+      function arr_sum(arr1, arr2) {
+        var sum_arr = [];
+        //check for the longest array
+        let len1 = arr1.length;
+        let len2 = arr2.length;
+        let loop = 0;
+        if( len1 > len2 ) {
+           loop = len1;
+        } else {
+          loop = len2;
+        }
+        
+        //perform the sum
+        for ( let ndx = 0; ndx < loop; ndx++)  {
+          //check for non-existant elements and substitute them with zeros
+          if( arr1[ndx] === undefined) {
+            arr1[ndx] = 0;
+          }
+          if (arr2[ndx] === undefined) {
+            arr2[ndx] = 0;
+          }
+          sum_arr[ndx] = arr1[ndx] + arr2[ndx] ;
+        }
+        console.log(sum_arr);
+        
+      }//end function arr_sum
+      user_input();
+    </script>
+  </body>
+
+</html> 
